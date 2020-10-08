@@ -1,0 +1,33 @@
+#!/bin/sh
+# SPDX-License-Identifier: GPL-2.0-or-later
+# Copyright (C) 2020-present lambda-isel (https://github.com/lambda-isel)
+
+tmp="$(mktemp -up .)"
+
+python3 create_repository.py -d "${tmp}" \
+  https://github.com/lambda-isel/repository.lambda#beta \
+  https://github.com/lambda-isel/script.module.simple_plugin#beta \
+  https://github.com/lambda-isel/script.module.simple_station#beta \
+  https://github.com/lambda-isel/plugin.audio.simple_station_fr#beta \
+
+for zip in "${tmp}"/*/*.zip; do
+  path="${zip##${tmp}/}"
+  if [ ! -e "${path}" ]; then
+    folder="$(dirname ${path})"
+    mkdir -p "${folder}"
+    cp "${zip}"* "${folder}"
+  fi
+done
+
+addons="addons.xml"
+echo '<?xml version="1.0" encoding="UTF-8"?>' > "${addons}"
+echo '<addons>' >> "${addons}"
+for zip in */*.zip; do
+  addon="$(dirname ${zip})"
+  unzip -p "${zip}" "${addon}/addon.xml" | grep -v '^<?xml' >> "${addons}" >> "${addons}"
+done
+echo '</addons>' >> "${addons}"
+
+md5sum "${addons}" > "${addons}.md5"
+
+rm -fr "${tmp}"
