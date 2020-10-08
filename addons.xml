@@ -22,6 +22,28 @@
     </assets>
   </extension>
 </addon>
+<addon id="plugin.audio.simple_station_fr" name="Radios francophones" version="0.0.2" provider-name="lambda-isel">
+  <requires>
+    <import addon="script.module.simple_station"/>
+    <import addon="xbmc.python" version="2.26.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>audio</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Radios francophones</summary>
+    <description>Ecoutez les directs et les rediffusions de stations radio francophones avec Kodi</description>
+    <platform>all</platform>
+    <license>GPL-2.0-or-later</license>
+    <forum>https://github.com/lambda-isel/plugin.audio.simple_station_fr/issues</forum>
+    <website>https://github.com/lambda-isel/plugin.audio.simple_station_fr</website>
+    <source>https://github.com/lambda-isel/plugin.audio.simple_station_fr</source>
+    <news>https://github.com/lambda-isel/plugin.audio.simple_station_fr/commits</news>
+    <assets>
+      <icon>resources/icon.png</icon>
+    </assets>
+  </extension>
+</addon>
 <addon id="repository.lambda_beta" name="Lambda Beta Add-ons" version="0.0.1" provider-name="lambda-isel">
   <requires>
     <import addon="xbmc.python" version="2.26.0"/>
@@ -60,6 +82,25 @@
   </extension>
 </addon>
 <addon id="script.module.simple_station" name="Simple Station" version="0.0.1" provider-name="lambda-isel">
+  <requires>
+    <import addon="script.module.beautifulsoup4"/>
+    <import addon="script.module.simple_plugin"/>
+    <import addon="script.module.requests"/>
+    <import addon="xbmc.python" version="2.26.0"/>
+  </requires>
+  <extension point="xbmc.python.module" library="lib"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Simple Station</summary>
+    <description lang="en_GB">Simple Station enables browsing live channels, programs and broadcasts</description>
+    <platform>all</platform>
+    <license>GPL-2.0-or-later</license>
+    <forum>https://github.com/lambda-isel/script.module.simple_station/issues</forum>
+    <website>https://github.com/lambda-isel/script.module.simple_station</website>
+    <source>https://github.com/lambda-isel/script.module.simple_station</source>
+    <news>https://github.com/lambda-isel/script.module.simple_station/commits</news>
+  </extension>
+</addon>
+<addon id="script.module.simple_station" name="Simple Station" version="0.0.2" provider-name="lambda-isel">
   <requires>
     <import addon="script.module.beautifulsoup4"/>
     <import addon="script.module.simple_plugin"/>
