@@ -6,6 +6,7 @@ tmp="$(mktemp -up .)"
 
 python3 create_repository.py -d "${tmp}" \
   https://github.com/lambda-isel/repository.lambda#beta \
+  https://github.com/lambda-isel/script.iptv_playlist_manager#beta \
   https://github.com/lambda-isel/script.module.simple_plugin#beta \
   https://github.com/lambda-isel/script.module.simple_station#beta \
   https://github.com/lambda-isel/plugin.audio.simple_station_fr#beta \
