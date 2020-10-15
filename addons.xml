@@ -132,6 +132,29 @@
     </assets>
   </extension>
 </addon>
+<addon id="script.iptv_playlist_manager" name="IPTV Playlist Manager" version="0.0.3" provider-name="lambda-isel">
+  <requires>
+    <import addon="pvr.iptvsimple"/>
+    <import addon="script.module.requests"/>
+    <import addon="xbmc.python" version="2.26.0"/>
+  </requires>
+  <extension point="xbmc.python.script" library="script.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">IPTV Playlist Manager</summary>
+    <description lang="en_GB">IPTV Playlist Manager creates a single playlist from a plurality of local or remote playlists and loads it into PVR IPTV Simple Client</description>
+    <platform>all</platform>
+    <license>GPL-2.0-or-later</license>
+    <forum>https://github.com/lambda-isel/script.iptv_playlist_manager/issues</forum>
+    <website>https://github.com/lambda-isel/script.iptv_playlist_manager</website>
+    <source>https://github.com/lambda-isel/script.iptv_playlist_manager</source>
+    <news>https://github.com/lambda-isel/script.iptv_playlist_manager/commits</news>
+    <assets>
+      <icon>resources/icon.png</icon>
+    </assets>
+  </extension>
+</addon>
 <addon id="script.module.simple_plugin" name="Simple Plugin" version="0.0.1" provider-name="lambda-isel">
   <requires>
     <import addon="xbmc.python" version="2.26.0"/>
